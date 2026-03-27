@@ -1,0 +1,106 @@
+:root {
+  --primary: #7bbf9e;
+  --bg: #f4f7f5;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text: #2d3436;
+  --input-bg: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode {
+  --primary: #5da382;
+  --bg: #1a1a2e;
+  --card-bg: rgba(30, 39, 46, 0.98);
+  --text: #f1f2f6;
+  --input-bg: #2f3542;
+}
+
+html { scroll-behavior: smooth; } /* Smooth scroll vibe */
+
+body { font-family: 'Arial', sans-serif; margin:0; background: var(--bg); color: var(--text); transition: var(--transition); overflow-x: hidden; }
+
+/* Glassmorphism Header */
+header {
+  background: rgba(123, 191, 158, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 15px 25px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; opacity: 0.9; }
+nav a:hover { opacity: 1; text-decoration: underline; }
+
+.section-bg { position: relative; padding: 80px 20px; min-height: 90vh; display: flex; align-items: center; background-size: cover; background-position: center; }
+.section-bg::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.45); z-index: 0; }
+.section-bg * { position: relative; z-index: 1; }
+
+.mood-bg { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); }
+.gratitude-bg { background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); }
+.history-bg { background-image: url('https://images.unsplash.com/photo-1526676037220-763e8045e90c'); }
+.relax-bg { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e'); }
+
+.card {
+  background: var(--card-bg);
+  color: var(--text) !important;
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px; 
+  min-height: 520px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.history-card { max-width: 700px; min-height: auto; padding: 40px; }
+
+textarea, input { width: 90%; padding: 14px; border-radius: 12px; border: 1px solid #ddd; margin: 15px 0; background: var(--input-bg); color: var(--text); font-size: 1rem; }
+
+button { padding: 12px 28px; border-radius: 30px; border: none; cursor: pointer; font-weight: bold; transition: var(--transition); margin: 5px; }
+.primary { background: var(--primary); color: white; }
+.secondary { background: #dfe6e9; color: #2d3436; }
+button:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.moods img { width: 50px; margin: 8px; cursor: pointer; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-radius: 50%; }
+.moods img:hover { transform: scale(1.35) translateY(-5px); filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+
+#breathCircle { width: 100px; height: 100px; background: var(--primary); border-radius: 50%; margin: 30px auto; opacity: 0.8; transition: transform 4s ease-in-out; }
+
+/* Glowing Breathing Animation */
+.breathing { animation: breatheAnim 4s infinite ease-in-out; }
+@keyframes breatheAnim {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px var(--primary); opacity: 0.6; }
+  50% { transform: scale(2.2); box-shadow: 0 0 50px var(--primary), 0 0 20px white; opacity: 1; }
+}
+
+/* Toast Styles */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 2000;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: bold;
+}
+.toast-hidden { bottom: -100px !important; opacity: 0; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+th, td { padding: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); text-align: left; }
+body.dark-mode th, body.dark-mode td { border-bottom: 1px solid rgba(255,255,255,0.1); }
