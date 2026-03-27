@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7f5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Card Base */
+.card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section backgrounds */
+.section-bg.mood-bg {
+  background: url('https://images.unsplash.com/photo-1517519014922-8fc0f8f5a1d1?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+  background-size: cover;
+}
+.section-bg.gratitude-bg {
+  background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+  background-size: cover;
+}
+.section-bg.history-bg {
+  background: url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+  background-size: cover;
+}
+.section-bg.relax-bg {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+  background-size: cover;
+}
+.section-bg.support-bg {
+  background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+  background-size: cover;
+}
+
+/* Moods */
+.moods {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.moods span {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Text areas */
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  resize: none;
+}
+
+/* Buttons */
+button.primary {
+  background: #7bbf9e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button.secondary {
+  background: #eaeaea;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Daily prompt */
+.daily-prompt {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* History Section */
+.history-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.history-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  padding: 15px;
+  flex: 1 1 48%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #333;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Breathing */
+.breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #7bbf9e;
+  animation: pulse 4s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #eee;
+}
+body.dark-mode .card {
+  background: rgba(30,30,30,0.95);
+}
+body.dark-mode button.primary {
+  background: #4a8f74;
+}
+body.dark-mode button.secondary {
+  background: #444;
+  color: #eee;
+}
