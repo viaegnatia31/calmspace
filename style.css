@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  margin: 0;
+}
+
+.app {
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 16px;
+  width: 360px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+h2 { margin-bottom: 10px; }
+
+.moods span {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.2s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.moods span:hover { transform: scale(1.3); }
+.moods span img { width: 40px; height: 40px; margin-bottom: 2px; }
+
+textarea, #gratitude { width: 100%; margin-top: 10px; border-radius: 8px; padding: 8px; }
+button { margin-top: 10px; padding: 10px; border: none; border-radius: 8px; cursor: pointer; }
+.primary { background: #7bbf9e; color: white; }
+.secondary { background: #eaeaea; }
+.hidden { display: none; }
+
+#supportBox, #breathingBox, #chatBox, #gratitudeBox, #streakBox, #badgeBox, #predictionBox { 
+  margin-top: 12px; padding: 10px; background: #eef6f5; border-radius: 8px; 
+}
+
+#historyList { margin-top: 20px; text-align: left; max-height: 220px; overflow-y: auto; }
+
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.entry-bg {
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  animation: slideFadeIn 0.5s ease forwards;
+}
+#historyList div span.icon { font-size: 24px; margin-right: 8px; display:flex; align-items:center; }
+#historyList div span.icon img { width:24px; height:24px; margin-right:4px; }
+
+#breathCircle { margin: 20px auto; width: 100px; height: 100px; border-radius: 50%; background: #7bbf9e; }
+
+canvas { margin-top: 15px; border-radius: 12px; background: #fff; }
+
+.badge { display:inline-block; margin:5px; padding:5px 12px; border-radius:16px; background: #FFD700; color:#000; font-weight:bold; position: relative; }
+.badge::after { content:"🎉"; position:absolute; top:-10px; right:-10px; font-size:16px; }

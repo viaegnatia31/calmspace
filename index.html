@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CalmSpace</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="app">
+  <h2>Hi 🌿</h2>
+  <p>How are you feeling today?</p>
+
+  <div class="moods">
+    <span onclick="selectMood('😔')"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f614.png" alt="😔">😔</span>
+    <span onclick="selectMood('😕')"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f615.png" alt="😕">😕</span>
+    <span onclick="selectMood('😐')"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f610.png" alt="😐">😐</span>
+    <span onclick="selectMood('🙂')"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f642.png" alt="🙂">🙂</span>
+    <span onclick="selectMood('😊')"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f60a.png" alt="😊">😊</span>
+  </div>
+
+  <textarea id="note" placeholder="Write something (optional)"></textarea>
+  <button class="primary" onclick="saveEntry()">Save</button>
+  <button class="secondary" onclick="showSupport()">I need support</button>
+
+  <div id="supportBox" class="hidden">
+    <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f33f.png" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+    <span id="supportText"></span>
+  </div>
+
+  <h3>🌈 Your Mood History</h3>
+  <div id="historyList"><p>No entries yet.</p></div>
+
+  <h3>🙏 Gratitude Journal</h3>
+  <textarea id="gratitude" placeholder="Write 1–3 things you are grateful for today…"></textarea>
+  <button class="secondary" onclick="saveGratitude()">Save Gratitude</button>
+  <div id="gratitudeBox" class="hidden">
+    <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f33c.png" style="width:24px;height:24px;vertical-align:middle;margin-right:5px;">
+    <span>Saved! 🌿</span>
+  </div>
+
+  <h3>💨 Relax & Chat</h3>
+  <button class="secondary" onclick="startBreathing()">Breathing Exercise 🌬️</button>
+  <button class="secondary" onclick="openChat()">Chat with AI 🤖</button>
+
+  <div id="breathingBox" class="hidden">
+    <p id="breathingText">Follow the animation…</p>
+    <div id="breathCircle"></div>
+  </div>
+
+  <div id="chatBox" class="hidden">
+    <div id="chatMessages"></div>
+    <input type="text" id="chatInput" placeholder="Say something...">
+    <button class="primary" onclick="sendChat()">Send</button>
+  </div>
+
+  <h3>📊 Mood Trend</h3>
+  <canvas id="moodChart" width="300" height="150"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
