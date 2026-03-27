@@ -1,0 +1,42 @@
+/* General */
+body { font-family: Arial; margin:0; background:#f4f7f5; color:#333; }
+header { background:#7bbf9e; color:white; padding:20px; text-align:center; }
+nav a { color:white; margin:0 10px; text-decoration:none; }
+button { cursor:pointer; border:none; border-radius:20px; transition:0.3s; }
+button:hover { transform:scale(1.05); }
+
+/* Sections and Cards */
+.section-bg { position: relative; padding:40px 20px; border-radius:12px; margin:40px auto; max-width:900px; overflow:hidden; }
+.card { background: rgba(255, 255, 255, 0.95); padding:20px; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.2); max-width:350px; margin:20px auto; text-align:center; animation:fadeIn 0.6s ease; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+/* Mood Section */
+.moods img { width:50px; margin:5px; cursor:pointer; transition:0.3s; display:inline-block; }
+textarea { width:100%; max-width:260px; height:80px; padding:10px; border-radius:12px; margin:10px auto; display:block; }
+
+/* Gratitude */
+input { width:100%; max-width:260px; height:40px; padding:8px; border-radius:12px; margin:10px auto; display:block; }
+#gratitudeList { padding:0; list-style:none; }
+#gratitudeList li { background: rgba(255,255,255,0.9); margin:6px auto; padding:8px; border-radius:10px; max-width:260px; }
+
+/* History */
+#tableCard, #chartCard { background: rgba(255,255,255,0.92); padding:15px; border-radius:16px; margin:15px auto; max-width:500px; }
+#historyTable { width:100%; border-collapse: separate; border-spacing:0 8px; }
+#historyTable th, #historyTable td { padding:10px; border:none; border-radius:10px; background: rgba(255,255,255,0.9); color:#333; text-align:left; }
+#seeMoreBtn { margin-top:10px; }
+
+/* Chart */
+#moodChart { max-width:300px; margin:20px auto; background: rgba(255,255,255,0.92); padding:10px; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+
+/* Breathing */
+#breathCircle { width:100px; height:100px; background:#7bbf9e; border-radius:50%; margin:auto; transition:4s; }
+#breathText { margin-top:10px; font-weight:bold; }
+
+/* Dark Mode */
+body.dark { background:#1e1e1e; color:#f0f0f0; }
+body.dark header { background:#2c7a5f; }
+body.dark .card { background: rgba(30,30,30,0.9); color:#f0f0f0; }
+body.dark textarea, body.dark input { background:#333; color:#f0f0f0; border:1px solid #555; }
+body.dark #historyTable td, body.dark #gratitudeList li { background: rgba(50,50,50,0.9); color:#f0f0f0; }
+body.dark button.primary { background:#2c7a5f; color:white; }
+body.dark button.secondary { background:#555; color:#f0f0f0; }
