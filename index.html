@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmSpace 🌿</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>CalmSpace 🌿</h1>
+  <nav>
+    <a href="#moodSection">Mood</a>
+    <a href="#gratitudeSection">Gratitude</a>
+    <a href="#historySection">History</a>
+    <a href="#breathSection">Breathing</a>
+  </nav>
+  <button id="themeToggle" class="primary">Dark Mode</button>
+</header>
+
+<main>
+  <section id="moodSection" class="section-bg mood-bg">
+    <div class="card">
+      <h2>How are you feeling?</h2>
+      <div class="moods">
+        <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f61e.png" alt="Sad" onclick="selectMood('😔')">
+        <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f615.png" alt="Confused" onclick="selectMood('😕')">
+        <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f610.png" alt="Neutral" onclick="selectMood('😐')">
+        <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f642.png" alt="Slightly Happy" onclick="selectMood('🙂')">
+        <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f60a.png" alt="Happy" onclick="selectMood('😊')">
+      </div>
+      <textarea id="note" placeholder="What's on your mind?"></textarea>
+      <div class="button-group">
+        <button class="primary" onclick="saveEntry()">Save Entry</button>
+        <button class="secondary" onclick="showSupport()">Support</button>
+      </div>
+      <p id="supportBox" class="support-text" style="display:none;"></p>
+      <p id="dailyPrompt" class="prompt-text"></p>
+    </div>
+  </section>
+
+  <section id="gratitudeSection" class="section-bg gratitude-bg">
+    <div class="card">
+      <h2>Gratitude Journal 🌸</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="60" style="margin-bottom:15px;">
+      <input type="text" id="gratitudeInput" placeholder="I am grateful for...">
+      <button class="primary" onclick="addGratitude()">Add to Journal</button>
+      <ul id="gratitudeList"></ul>
+    </div>
+  </section>
+
+  <section id="historySection" class="section-bg history-bg">
+    <div class="card history-card">
+      <h2>Your Journey</h2>
+      <div class="button-group">
+        <button class="primary" onclick="exportCSV()">Download CSV</button>
+        <button class="secondary danger" id="resetBtn" onclick="clearAllData()">Reset All</button>
+      </div>
+      <canvas id="moodChart"></canvas>
+      <div class="table-container">
+        <table id="historyTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Mood</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="breathSection" class="section-bg relax-bg">
+    <div class="card">
+      <h2>Breathing Exercise 🌬️</h2>
+      <div id="breathCircle"></div>
+      <p id="breathText">Press start to begin</p>
+      <button class="primary" onclick="startBreathing()">Start</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>CalmSpace &copy; 2026</p>
+</footer>
+
+</body>
+</html>
