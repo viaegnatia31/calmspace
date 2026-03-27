@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CalmSpace</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>CalmSpace 🌿</h1>
+  <nav>
+    <a href="#moodSection">Mood Tracker</a>
+    <a href="#gratitudeSection">Gratitude</a>
+    <a href="#historySection">History</a>
+    <a href="#breathSection">Breathing</a>
+  </nav>
+  <button id="themeToggle">Toggle Dark Mode</button>
+</header>
+
+<main>
+
+  <!-- Mood Tracker -->
+  <section id="moodSection" class="section-bg mood-bg">
+    <h2>How are you feeling today?</h2>
+    <div class="moods">
+      <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f61e.png" alt="Sad" onclick="selectMood('😔')">
+      <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f615.png" alt="Confused" onclick="selectMood('😕')">
+      <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f610.png" alt="Neutral" onclick="selectMood('😐')">
+      <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f642.png" alt="Slightly Happy" onclick="selectMood('🙂')">
+      <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f60a.png" alt="Happy" onclick="selectMood('😊')">
+    </div>
+    <textarea id="note" placeholder="Write something (optional)"></textarea>
+    <button class="primary" onclick="saveEntry()">Save</button>
+    <button class="secondary" onclick="showSupport()">I need support</button>
+    <div id="supportBox" class="hidden">
+      <p id="supportText"></p>
+    </div>
+    <div id="promptBox">
+      <p id="dailyPrompt"></p>
+    </div>
+  </section>
+
+  <!-- Gratitude Journal -->
+  <section id="gratitudeSection" class="section-bg gratitude-bg">
+    <h2>Gratitude Journal</h2>
+    <input type="text" id="gratitudeInput" placeholder="Write one thing you’re grateful for">
+    <button class="primary" onclick="addGratitude()">Add</button>
+    <ul id="gratitudeList"></ul>
+  </section>
+
+  <!-- Mood History -->
+  <section id="historySection" class="section-bg history-bg">
+    <h2>Mood History</h2>
+    <button class="primary" onclick="exportCSV()">Download CSV</button>
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Mood</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <canvas id="moodChart"></canvas>
+  </section>
+
+  <!-- Breathing Exercise -->
+  <section id="breathSection" class="section-bg relax-bg">
+    <h2>Breathing Exercise</h2>
+    <div id="breathCircle"></div>
+    <p id="breathText">Follow the circle</p>
+    <button class="primary" onclick="startBreathing()">Start</button>
+  </section>
+
+</main>
+
+<footer>
+  <p>CalmSpace &copy; 2026 | <a href="#">Privacy</a></p>
+</footer>
+
+</body>
+</html>
